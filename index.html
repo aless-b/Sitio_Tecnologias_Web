@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Tecnologías de Web APIs</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code me-2"></i>TechWeb
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="webTechDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Tecnologías Web
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="webTechDropdown">
+                            <li><a class="dropdown-item" href="#http">HTTP</a></li>
+                            <li><a class="dropdown-item" href="#soap">SOAP</a></li>
+                            <li><a class="dropdown-item" href="#rest">REST</a></li>
+                            <li><a class="dropdown-item" href="#jwt">JWT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="microservicios.html">Microservicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="webapi.html">Web API</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contenedores.html">Contenedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nube.html">Nube</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <i class="fas fa-envelope me-1"></i> Contáctanos
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel -->
+    <div id="mainCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/1.webp" class="d-block w-100" alt="APIs">
+            </div>
+            <div class="carousel-item">
+                <img src="img/2.png" class="d-block w-100" alt="HTTP">
+            </div>
+            <div class="carousel-item">
+                <img src="img/3.avif" class="d-block w-100" alt="SOAP">
+            </div>
+            <div class="carousel-item">
+                <img src="img/4.png" class="d-block w-100" alt="JWT">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+ 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="text-center mb-5 section-title">Tecnologías de Web APIs</h1>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="lead">Las tecnologías de web APIs son mecanismos que permiten a dos componentes de software comunicarse entre sí mediante un conjunto de definiciones y protocolos. <small class="text-muted">(Amazon, 2023)</small></p>
+                        
+                        <p>Una API (interfaz de programación de aplicaciones), es un conjunto de reglas definidas que permiten que diferentes aplicaciones se comuniquen entre sí. Actúa como una capa intermedia que procesa las transferencias de datos entre sistemas, permitiendo a las empresas abrir sus datos y funcionalidades de aplicaciones a desarrolladores externos, socios comerciales y departamentos internos dentro de sus empresas. <small class="text-muted">(IBM, 2023)</small></p>
+                        
+                        <div class="text-center mt-4">
+                            <button class="btn btn-dark me-2" data-bs-toggle="modal" data-bs-target="#codeModal">
+                                <i class="fas fa-code me-1"></i> Ver ejemplo de API
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">Ejemplos de APIs</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fab fa-google fa-3x text-danger me-3"></i>
+                                            <div>
+                                                <h5 class="mb-0">API de Google</h5>
+                                                <small class="text-muted">Búsqueda, Gmail, Traductor o Maps</small>
+                                            </div>
+                                        </div>
+                                        <p>Google ofrece una amplia variedad de APIs para integrar sus servicios en aplicaciones de terceros.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fab fa-youtube fa-3x text-danger me-3"></i>
+                                            <div>
+                                                <h5 class="mb-0">YouTube API</h5>
+                                                <small class="text-muted">Incrustación de videos</small>
+                                            </div>
+                                        </div>
+                                        <p>Permite incrustar videos de YouTube y gestionar contenido mediante programación.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fab fa-paypal fa-3x text-primary me-3"></i>
+                                            <div>
+                                                <h5 class="mb-0">PayPal API</h5>
+                                                <small class="text-muted">Pagos en línea</small>
+                                            </div>
+                                        </div>
+                                        <p>API para integrar pagos electrónicos seguros en aplicaciones web y móviles.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fab fa-whatsapp fa-3x text-success me-3"></i>
+                                            <div>
+                                                <h5 class="mb-0">WhatsApp Business API</h5>
+                                                <small class="text-muted">Mensajería empresarial</small>
+                                            </div>
+                                        </div>
+                                        <p>Permite a las empresas comunicarse con sus clientes a través de WhatsApp.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="http" class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">HTTP</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>HTTP son las siglas en inglés de Hypertext Transfer Protocol, que en español significa Protocolo de Transferencia de Hipertexto. Es un conjunto de reglas que permite la comunicación entre navegadores y servidores web.</p>
+                        
+                        <h5 class="mt-4">Métodos de petición</h5>
+                        <p>Para enviar ciertos tipos de información al servidor, el protocolo HTTP provee diferentes métodos de petición. Los dos más importantes son GET y POST.</p>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header bg-info text-white">
+                                        Método GET
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Con el método GET, los datos que se envían al servidor se escriben en la misma dirección URL.</p>
+                                        <div class="code-example">
+                                            www.ejemplo.com/registrarse.php?nombre=pedro&apellido=perez&edad=55&genero=hombre
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header bg-success text-white">
+                                        Método POST
+                                    </div>
+                                    <div class="card-body">
+                                        <p>El método POST introduce los parámetros en la solicitud HTTP para el servidor. Por ello, no quedan visibles para el usuario.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4">Códigos de estado</h5>
+                        <p>Un código de estado indica el resultado de la solicitud HTTP, proporcionando información sobre el éxito o error del procesamiento.</p>
+                        
+                        <div class="table-responsive mt-3">
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Significado</th>
+                                        <th>Ejemplo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1xx</td>
+                                        <td>Informativo</td>
+                                        <td>100 - Continue</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2xx</td>
+                                        <td>Éxito</td>
+                                        <td>200 - OK</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3xx</td>
+                                        <td>Redirección</td>
+                                        <td>301 - Moved Permanently</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4xx</td>
+                                        <td>Error del cliente</td>
+                                        <td>404 - Not Found</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5xx</td>
+                                        <td>Error del servidor</td>
+                                        <td>503 - Service Unavailable</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h5 class="mt-4">URI</h5>
+                        <p>Un Identificador de Recursos Uniforme (URI) es una cadena de caracteres que identifica de manera única un recurso en la web. Existen dos clases de URI, las URL y las URN. Las URL o Uniform
+                            Resource Locator especifica la ubicación de un recurso y cómo acceder a él. Las URN o Uniform
+                            Resource Name son un identificador único de un recurso, pero sin especificar cómo acceder a él.</p>
+                        
+                        <div class="alert alert-info mt-3">
+                            <strong>Ejemplo de URI:</strong> <code>https://www.example.com:8080/path/to/resource?query=string#fragment</code>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="soap" class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">SOAP</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>SOAP (Simple Object Access Protocol) es un protocolo de comunicación basado en XML. Es utilizado para intercambiar información estructurada en la implementación de servicios web. Fue desarrollado para facilitar la comunicación entre sistemas distribuidos a través de la web.</p>
+                        
+                        <h5 class="mt-4">Características</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-file-code me-3 text-primary"></i>
+                                        <div>
+                                            <strong>Basado en XML</strong><br>
+                                            Utiliza XML como su formato de mensaje
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-exchange-alt me-3 text-primary"></i>
+                                        <div>
+                                            <strong>Protocolo independiente</strong><br>
+                                            No está vinculado a ningún protocolo de transporte específico
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-laptop-code me-3 text-primary"></i>
+                                        <div>
+                                            <strong>Plataforma independiente</strong><br>
+                                            Es independiente de la plataforma y el lenguaje de programación
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-expand me-3 text-primary"></i>
+                                        <div>
+                                            <strong>Extensibilidad</strong><br>
+                                            Permite la inclusión de información adicional en los mensajes
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4">Usos comunes</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-cloud fa-3x mb-3 text-info"></i>
+                                        <h6 class="card-title">Servicios Web</h6>
+                                        <p class="card-text">SOAP es un componente fundamental de los servicios web, donde se utiliza para la comunicación entre aplicaciones a través de la web.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-project-diagram fa-3x mb-3 text-success"></i>
+                                        <h6 class="card-title">Integración de sistemas</h6>
+                                        <p class="card-text">Se utiliza para integrar sistemas heterogéneos, permitiendo que aplicaciones desarrolladas en diferentes lenguajes y plataformas se comuniquen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-building fa-3x mb-3 text-warning"></i>
+                                        <h6 class="card-title">Aplicaciones empresariales</h6>
+                                        <p class="card-text">Las organizaciones utilizan SOAP para la comunicación entre aplicaciones empresariales críticas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4">Ventajas y desventajas</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="card border-success">
+                                    <div class="card-header bg-success text-white">
+                                        Ventajas
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Interoperabilidad</li>
+                                            <li class="list-group-item">Seguridad</li>
+                                            <li class="list-group-item">Extensibilidad</li>
+                                            <li class="list-group-item">Robustez</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border-danger">
+                                    <div class="card-header bg-danger text-white">
+                                        Desventajas
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Overhead o sobrecarga</li>
+                                            <li class="list-group-item">Complejidad</li>
+                                            <li class="list-group-item">Velocidad de desarrollo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="rest" class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">API REST</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Las API REST proporcionan una forma flexible y ligera de integrar aplicaciones y se han convertido en el método más común para conectar componentes en arquitecturas de microservicios.</p>
+                        <p>Una API REST es una API que se ajusta a los principios de diseño de REST, o el estilo de arquitectura de transferencia de estado representacional. Por esta razón, las API REST a veces se denominan API RESTful.</p>
+                        
+                        <h5 class="mt-4">Principios de diseño de REST</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h6 class="card-title"><i class="fas fa-link me-2 text-primary"></i>Interfaz uniforme</h6>
+                                        <p class="card-text">Todas las solicitudes deben verse igual sin importar su origen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h6 class="card-title"><i class="fas fa-unlink me-2 text-primary"></i>Desacoplamiento cliente-servidor</h6>
+                                        <p class="card-text">El cliente solo interactúa con el servidor a través de URI.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h6 class="card-title"><i class="fas fa-history me-2 text-primary"></i>Sin estado</h6>
+                                        <p class="card-text">Cada solicitud es independiente y no mantiene sesiones en el servidor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h6 class="card-title"><i class="fas fa-database me-2 text-primary"></i>Capacidad de caché</h6>
+                                        <p class="card-text">Optimiza el rendimiento almacenando respuestas en caché cuando sea posible.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="my-4">
+                            <img src="img/apirest.png" alt="Arquitectura API REST" class="img-fluid rounded">
+                        </div>
+                        
+                        <h5 class="mt-4">Mejores prácticas en API REST</h5>
+                        <ul class="list-group mt-3">
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="fas fa-check text-success me-3 mt-1"></i>
+                                Utilizar la Especificación OpenAPI (OAS) para documentar la API
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="fas fa-check text-success me-3 mt-1"></i>
+
+                                Proteger datos con HTTPS y autenticación con OAuth 2.0
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="fas fa-check text-success me-3 mt-1"></i>
+                                Implementar validación de parámetros y tokens JWT para controlar accesos
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div id="jwt" class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">JWT (JSON Web Token)</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>JSON Web Token (JWT) es un estándar abierto que permite la transmisión segura de información entre partes como un objeto JSON firmado digitalmente. Es utilizado principalmente para autenticación y autorización en aplicaciones web y APIs.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5>Estructura de un JWT</h5>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <strong>Header (Encabezado):</strong> Contiene el tipo de token y el algoritmo de firma.
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Payload (Cuerpo):</strong> Contiene las reclamaciones o claims (información sobre el usuario o la sesión).
+                                            </li>
+                                            <li class="list-group-item">
+                                                <strong>Signature (Firma):</strong> Garantiza la integridad del token y que no ha sido modificado.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-3">
+                                    <h5>Ejemplo de JWT</h5>
+                                    <div class="code-example">
+                                        <small>Header</small>
+                                        <pre>{
+  "alg": "HS256",
+  "typ": "JWT"
+}</pre>
+                                        <small>Payload</small>
+                                        <pre>{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}</pre>
+                                        <small>Firma</small>
+                                        <pre>HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  secret
+)</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Funcionamiento de JWT</h5>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ol class="list-group list-group-numbered">
+                                            <li class="list-group-item">Un usuario inicia sesión con sus credenciales.</li>
+                                            <li class="list-group-item">El servidor verifica las credenciales y genera un JWT.</li>
+                                            <li class="list-group-item">El JWT se envía al cliente y se almacena en localStorage o cookies.</li>
+                                            <li class="list-group-item">En cada solicitud, el cliente envía el JWT en la cabecera de autorización.</li>
+                                            <li class="list-group-item">El servidor valida el token y concede acceso si es válido.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-3">
+                                    <h5>Ventajas de JWT</h5>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <i class="fas fa-shield-alt fa-2x text-success me-3"></i>
+                                                <div>
+                                                    <h6 class="mb-0">Seguridad</h6>
+                                                    <small class="text-muted">Usa firmas digitales (HMAC o RSA) para evitar manipulaciones.</small>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <i class="fas fa-expand-arrows-alt fa-2x text-info me-3"></i>
+                                                <div>
+                                                    <h6 class="mb-0">Escalabilidad</h6>
+                                                    <small class="text-muted">Permite autenticación sin mantener sesiones en el servidor.</small>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-tachometer-alt fa-2x text-primary me-3"></i>
+                                                <div>
+                                                    <h6 class="mb-0">Eficiencia</h6>
+                                                    <small class="text-muted">Es liviano y se puede transmitir fácilmente entre sistemas.</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4">Casos de Uso</h5>
+                        <div class="row mt-3">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user-lock fa-3x mb-3 text-primary"></i>
+                                        <h6 class="card-title">Autenticación</h6>
+                                        <p class="card-text">Autenticación de usuarios en aplicaciones web y móviles.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fa-solid fa-lock-open fa-3x mb-3 text-success"></i>
+                                        <h6 class="card-title">Autorización</h6>
+                                        <p class="card-text">Autorización en APIs RESTful.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-network-wired fa-3x mb-3 text-info"></i>
+                                        <h6 class="card-title">Microservicios</h6>
+                                        <p class="card-text">Intercambio seguro de información entre microservicios.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-warning mt-4">
+                            <h5><i class="fas fa-exclamation-triangle me-2"></i>Consideraciones de Seguridad</h5>
+                            <ul class="mb-0">
+                                <li>No almacenar JWT en localStorage si contiene información sensible.</li>
+                                <li>Usar HTTPS para evitar ataques de interceptación.</li>
+                                <li>Configurar tiempos de expiración adecuados.</li>
+                                <li>Implementar listas negras para tokens revocados.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video -->
+                <div class="card mb-4">
+                    <div class="card-header bg-dark text-white">
+                        <h2 class="h4 mb-0"><i class="fas fa-video me-2"></i>Video</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/bPNfu0IZhoE?si=NOh75577jUQI_dQY&amp;start=14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-code me-2"></i>TechWeb</h5>
+                    <p>Un sitio informativo sobre tecnologías de desarrollo web modernas.</p>
+                </div>
+            </div>
+            <hr class="bg-light">
+        </div>
+    </footer>
+
+    <!-- Ventana Modal Código ejemplo -->
+    <div class="modal fade" id="codeModal" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="codeModalLabel"><i class="fas fa-code me-2"></i>Ejemplo de API REST</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Este es un ejemplo básico de una API REST implementada con Node.js y Express:</p>
+                    <div class="code-example">
+                        <pre>const express = require('express');
+const app = express();
+app.use(express.json());
+
+// Datos de ejemplo
+let products = [
+  { id: 1, name: 'Laptop', price: 999.99 },
+  { id: 2, name: 'Smartphone', price: 699.99 }
+];
+
+// GET /api/products
+app.get('/api/products', (req, res) => {
+  res.json(products);
+});
+
+// GET /api/products/:id
+app.get('/api/products/:id', (req, res) => {
+  const product = products.find(p => p.id === parseInt(req.params.id));
+  if (!product) return res.status(404).send('Product not found');
+  res.json(product);
+});
+
+// POST /api/products
+app.post('/api/products', (req, res) => {
+  const product = {
+    id: products.length + 1,
+    name: req.body.name,
+    price: req.body.price
+  };
+  products.push(product);
+  res.status(201).json(product);
+});
+
+// PUT /api/products/:id
+app.put('/api/products/:id', (req, res) => {
+  const product = products.find(p => p.id === parseInt(req.params.id));
+  if (!product) return res.status(404).send('Product not found');
+  
+  product.name = req.body.name;
+  product.price = req.body.price;
+  
+  res.json(product);
+});
+
+// DELETE /api/products/:id
+app.delete('/api/products/:id', (req, res) => {
+  const product = products.find(p => p.id === parseInt(req.params.id));
+  if (!product) return res.status(404).send('Product not found');
+  
+  const index = products.indexOf(product);
+  products.splice(index, 1);
+  
+  res.json(product);
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));</pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="fas fa-envelope me-2"></i>Contacto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar mensaje</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

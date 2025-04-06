@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Microservicios</title>
+</head>
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code me-2"></i>TechWeb
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Tecnologías Web
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="microservicios.html">
+                            Microservicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="webapi.html">
+                            Web API
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contenedores.html">
+                            Contenedores
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nube.html">
+                            Nube
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <i class="fas fa-envelope me-1"></i> Contáctanos
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="bg-primary text-white py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold">Arquitectura de Microservicios</h1>
+                    <p class="lead mb-0">Un enfoque moderno para el desarrollo de aplicaciones escalables y mantenibles</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="section-title">¿Qué son los Microservicios?</h2>
+                        <hr class="border-primary  opacity-100">
+                        <p>Los microservicios representan un enfoque arquitectónico y organizativo para el desarrollo de <strong>software donde una aplicación se compone de pequeños servicios independientes</strong> que se comunican a través de API bien definidas. Estos servicios son propiedad de equipos pequeños e independientes. Esta arquitectura se considera nativa de la nube.</p>
+                        
+                        <div class="my-4">
+                            <img src="img/microservicios.png" alt="Arquitectura de Microservicios" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">Características clave</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-cubes fa-2x text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <h5 class="card-title">Autónomos</h5>
+                                                <p class="card-text">Cada servicio componente puede desarrollarse, implementarse, operarse y escalarse sin afectar a otros servicios. No comparten código ni implementaciones, comunicándose a través de API bien definidas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-bullseye fa-2x text-success me-3 mt-1"></i>
+                                            <div>
+                                                <h5 class="card-title">Especializados</h5>
+                                                <p class="card-text">Cada servicio está diseñado para un conjunto específico de capacidades y se enfoca en resolver un problema particular. Si un servicio se vuelve demasiado complejo, puede dividirse en servicios más pequeños.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-rocket fa-2x text-info me-3 mt-1"></i>
+                                            <div>
+                                                <h5 class="card-title">Desplegables de forma independiente</h5>
+                                                <p class="card-text">Los servicios son pequeños y pueden implementarse de forma independiente, lo que facilita la adición de nuevas características sin tocar toda la aplicación.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-tools fa-2x text-warning me-3 mt-1"></i>
+                                            <div>
+                                                <h5 class="card-title">Tecnología propia</h5>
+                                                <p class="card-text">Cada microservicio puede tener su propia tecnología, incluyendo la base de datos y el modelo de gestión de datos. Esto permite a los equipos usar diferentes pilas y lenguajes de programación para diferentes componentes.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">Beneficios</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-success">
+                                    <div class="card-header bg-success text-white">
+                                        <i class="fas fa-running me-1"></i> Agilidad
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Fomentan equipos pequeños e independientes que se apropian de los servicios, lo que permite trabajar de forma más independiente y rápida, acortando los ciclos de desarrollo y aumentando el rendimiento.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-info">
+                                    <div class="card-header bg-info text-darks">
+                                        <i class="fas fa-expand-arrows-alt me-1"></i> Escalado flexible
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Cada servicio puede escalarse de forma independiente para satisfacer la demanda de sus características específicas, optimizando el uso de la infraestructura y los costos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-header bg-primary text-white">
+                                        <i class="fas fa-truck me-1"></i> Implementación sencilla
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Facilitan la integración y la entrega continuas, lo que permite probar e implementar nuevas ideas fácilmente y revertir cambios si es necesario, acelerando el tiempo de comercialización.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-warning">
+                                    <div class="card-header bg-warning text-dark">
+                                        <i class="fas fa-unlock-alt me-1"></i> Libertad tecnológica
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Los equipos tienen la libertad de elegir la mejor herramienta para resolver sus problemas específicos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">Comparación con otras arquitecturas</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered comparison-table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Aspecto</th>
+                                        <th>Monolítica</th>
+                                        <th>SOA</th>
+                                        <th>Microservicios</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Estructura</td>
+                                        <td>Una sola unidad</td>
+                                        <td>Servicios compartidos</td>
+                                        <td>Servicios independientes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Escalabilidad</td>
+                                        <td>Escala toda la aplicación</td>
+                                        <td>Escala por servicios</td>
+                                        <td>Escala por servicios individuales</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Implementación</td>
+                                        <td>Única para toda la aplicación</td>
+                                        <td>Por servicios</td>
+                                        <td>Independiente por servicio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tecnología</td>
+                                        <td>Única para toda la aplicación</td>
+                                        <td>Compartida entre servicios</td>
+                                        <td>Independiente por servicio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Base de datos</td>
+                                        <td>Compartida</td>
+                                        <td>Compartida</td>
+                                        <td>Independiente por servicio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complejidad</td>
+                                        <td>Baja inicial, alta con crecimiento</td>
+                                        <td>Media</td>
+                                        <td>Alta inicial, manejable con crecimiento</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">Desafíos</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-warning">
+                            <p>Si bien los microservicios ofrecen muchos beneficios, también presentan desafíos importantes que deben considerarse:</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-sitemap text-danger me-3"></i>
+                                        <div>
+                                            <strong>Mayor complejidad de gestión</strong><br>
+                                            Implica muchos más servicios, equipos y despliegues.
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-bug text-danger me-3"></i>
+                                        <div>
+                                            <strong>Problemas entre servicios</strong><br>
+                                            Los problemas en un servicio pueden afectar a otros.
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-database text-danger me-3"></i>
+                                        <div>
+                                            <strong>Gestón de registros y datos</strong><br>
+                                            Los datos de registro pueden ser más voluminosos e inconsistentes.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-code-branch text-danger me-3"></i>
+                                        <div>
+                                            <strong>Problemas de compatibilidad</strong><br>
+                                            Las nuevas versiones pueden causar problemas de compatibilidad con versiones anteriores.
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-network-wired text-danger me-3"></i>
+                                        <div>
+                                            <strong>Latencia y conectividad</strong><br>
+                                            Más conexiones de red aumentan las oportunidades de problemas de latencia y conectividad.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h4 mb-0">Tecnologías clave</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fab fa-docker fa-3x mb-3"></i>
+                                        <h5 class="card-title">Contenedores (Docker)</h5>
+                                        <p class="card-text">Facilitan la creación de unidades de despliegue pequeñas y ligeras.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-robot fa-3x mb-3"></i>
+                                        <h5 class="card-title">Kubernetes</h5>
+                                        <p class="card-text">Ayuda a organizar y gestionar grandes grupos de contenedores.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-door-open fa-3x mb-3"></i>
+                                        <h5 class="card-title">API Gateways</h5>
+                                        <p class="card-text">Actúan como intermediarios para enrutar solicitudes, agregarlas y proporcionar seguridad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video-->
+                <div class="card mb-4">
+                    <div class="card-header bg-dark text-white">
+                        <h2 class="h4 mb-0"><i class="fas fa-video me-2"></i>Video</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ve8cei4ht6Y?si=Dq2zh8uUkrB4_ekk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer-->
+        <footer class="mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="fas fa-code me-2"></i>TechWeb</h5>
+                        <p>Un sitio informativo sobre tecnologías de desarrollo web modernas.</p>
+                    </div>
+                </div>
+                <hr class="bg-light">
+            </div>
+        </footer>
+
+    <!-- Ventana Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="fas fa-envelope me-2"></i>Contacto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar mensaje</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
